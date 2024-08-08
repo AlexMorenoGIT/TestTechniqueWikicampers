@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wikicampers - Les véhicules{% endblock %}
+
+{% block body %}
+
+<!--Bandeau de bienvenu lorsqu'il n'y a rien, sinon bandeau de succès-->
+{% if vehicles is empty %}
+    <div id="no-vehicles" role="alert">
+        Aucun véhicule n'a été ajouté pour le moment.
+        <a href="/create-vehicle" id="add-vehicule-link">En ajouter un</a>
+    </div>
+{% elseif app.flashes('success')|length > 0 %}
+    <div id="no-vehicles" role="alert">
+        {% for message in app.flashes('success') %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% else %}
+    <div id="no-vehicles" role="alert">
+        {{ vehicles|length }} véhicules disponibles à la location.
+        <a href="/create-vehicle" id="add-vehicule-link">En ajouter un</a>
+    </div>
+{% endif %}
+
+<div class="filters-container">
+    <img src="{{ asset('assets/images/background-camping-car.jpeg') }}" alt="Camping car" width="100%" id="background-homepage">
+    <div id="left-pannel"></div>
+
+    <div class="filters">
+        <h1 class="text-center mb-4" id="title-homepage">LOCATION ENTRE <br> PARTICULIERS</h1>
+        <div id="rectangle">
+            <button id="rental-title">LOCATION</button>
+            <div id="rental-filter">
+                <h3>Trouvez un véhicule à louer</h3>
+                {{ form_start (form, {'attr': {'class': 'form-filter'}}) }}
+                    <div id="dates-choice">
+                        <div class="dates">
+                            {{ form_label(form.beginDate, null, { 'attr': {'class': 'label-dates'} }) }}
+                            {{ form_widget (form.beginDate, {'attr': {'placeholder': 'Date de départ', 'class': 'input-date'}}) }}
+                        </div>
+                        <div class="dates">
+                            {{ form_label(form.endDate, null, { 'attr': {'class': 'label-dates'} }) }}
+                            {{ form_widget (form.endDate, {'attr': {'placeholder': 'Date de retour', 'class': 'input-date'}}) }}
+                        </div>
+                    </div>
+                    {{ form_widget(form.maxPricePerDay, { 'attr': { 'class': 'input-max-price' } }) }}
+                    <button type="submit" class="btn-search">Rechercher</button>
+                {{ form_end (form) }}
+                <p>Location entre particuliers avec assurance</p>
+            </div>
+    </div>
+</div>
+    
+
+<div class="container-vehicles">
+    <div class="row">
+        {% for vehicle in vehicles %}
+            <div class="mt-4 col-12 col-md-6 col-xl-4" id="card-ad">
+                <div id="vehicle-img">
+                    <img src="{{ vehicle.imageURL }}" alt="Image du véhicule" class="img-car-top">
+                    <div id="price-per-day">
+                        <p>À partir de<br></p>
+                        <h3>{{ vehicle.availabilities|first.pricePerDay }} € / jour</h3>
+                    </div>
+                </div>
+                <div id="card-bottom">
+                    <div id="vehicle-details">
+                        <h5>{{ vehicle.brand }}</h5>
+                        <h5>{{ vehicle.model }}</h5>
+                    </div>
+                    <p>Ajouté par : {{ vehicle.availabilities|first.createdBy }}</p>
+                    <div id="actions">
+                        {% if app.user %}
+                            {% if app.user.username == "admin" %}
+                                <a href="/edit/{{ vehicle.id }}"><i class="fa-regular fa-pen-to-square" id="edit"></i></a>
+                                <form action="/delete/{{ vehicle.id }}" method="post" style="display: inline;">
+                                    <button type="submit" id="delete"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

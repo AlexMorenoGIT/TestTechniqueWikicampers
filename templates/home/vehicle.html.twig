@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Wikicampers - Création d'un véhicule{% endblock %}
+
+{% block body %}
+
+    <div id="no-vehicles" role="alert">
+        Ajout d'un véhicule pour la location
+        <a href="/" id="add-vehicule-link">Revenir à l'accueil</a>
+    </div>
+
+    <div class="row step text-center step-orange tunnel-vehicule">
+        <div class="col-12 col-md-2 px-3 step-selected ">
+            <div class="circle">1</div>
+            <span class="label">Informations</span>
+        </div>
+        <div class="col-12 col-md-2 px-3  d-none d-md-block">
+            <div class="circle">2</div>
+            <span class="label">Disponibilités</span>
+        </div>
+    </div>
+
+
+    <div class="card">
+        {{ form_start(formVehicle, { 'attr': {'class': 'form-vehicle'} }) }}
+            <div class="form-container">
+                <div class="form-label-container">
+                    {{ form_label(formVehicle.brand, null, { 'attr': {'class': 'brand-label'} }) }}
+                    <div class="select-container">
+                        {{ form_widget(formVehicle.brand, { 'attr': {'class': 'brand-widget input'} }) }}
+                    </div>
+                </div>
+                <div class="form-label-container">
+                    {{ form_label(formVehicle.model, null, { 'attr': {'class': 'model-label'} }) }}
+                    {{ form_widget(formVehicle.model, { 'attr': {'class': 'model-widget input non'} }) }}
+                    <div class="model-helper-text">Par exemple : C3 Aircross</div>
+                </div>
+            </div>
+            <div class="form-label-container image-url">
+                {{ form_label(formVehicle.imageURL, null, { 'attr': {'class': 'model-label'} }) }}
+                {{ form_widget(formVehicle.imageURL, { 'attr': {'class': 'urlimg-widget input'} }) }}
+            </div>
+            <div class="form-submit">
+                {{ form_widget(formVehicle.submit, { 'attr': {'class': 'submit-widget'} }) }}
+            </div>
+        {{ form_end(formVehicle) }}
+    </div>
+
+{% endblock %}

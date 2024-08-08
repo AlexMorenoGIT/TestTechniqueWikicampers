@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Wikicampers - Création d'un véhicule{% endblock %}
+
+{% block body %}
+
+    <div id="no-vehicles" role="alert">
+        Ajout d'un véhicule pour la location
+        <a href="/" id="add-vehicule-link">Revenir à l'accueil</a>
+    </div>
+
+    <div class="row step text-center step-orange tunnel-vehicule">
+        <div class="col-12 col-md-2 px-3 step-selected ">
+            <div class="circle">1</div>
+            <span class="label">Informations</span>
+        </div>
+        <div class="col-12 col-md-2 px-3 step-selected">
+            <div class="circle">2</div>
+            <span class="label">Disponibilités</span>
+        </div>
+    </div>
+
+    <div class="form-availability-container">
+        {{ form_start(formAvailability, { 'attr': {'class': 'form-availability'} }) }}
+            <div id="dates-choice">
+                <div class="dates-availability">
+                    {{ form_label(formAvailability.start_date, 'Date de départ') }}
+                    {{ form_widget(formAvailability.start_date, { 'attr': {'class': 'form-dates'} }) }}
+                </div>
+                <div class="dates-availability">
+                    {{ form_label(formAvailability.end_date, 'Date de retour') }}
+                    {{ form_widget(formAvailability.end_date, { 'attr': {'class': 'form-dates'} }) }}
+                </div>
+            </div>
+            {{ form_widget(formAvailability.pricePerDay, { 'attr': { 'placeholder': 'Prix par jour', 'class': 'price-per-day' } }) }}
+            <button type="submit" class="submit-widget">Enregistrer</button>
+        {{ form_end(formAvailability) }}
+    </div>
+
+{% endblock %}

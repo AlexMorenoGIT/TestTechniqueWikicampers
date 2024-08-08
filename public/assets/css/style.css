@@ -1,0 +1,687 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: BrandingSemiLight;
+    src: url('../fonts/BrandingSF-CmpSemiLight.ttf');
+}
+
+@font-face {
+    font-family: BrandingMedium;
+    src: url('../fonts/BrandingSF-CmpMedium.ttf');
+}
+
+@font-face {
+    font-family: BrandingSemiBold;
+    src: url('../fonts/BrandingSF-CmpSemiBold.ttf');
+}
+
+@font-face {
+    font-family: BrandingBold;
+    src: url('../fonts/BrandingSF-CmpBold.ttf');
+}
+
+/* General */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Body */
+.main-container {
+    width: calc(100vw - 12,98rem);
+}
+
+/* Navbar et bandeau noir */
+.navbar{
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 6.49rem 0rem 6.49rem;
+    background: #fff;
+    width: 100%;
+}
+
+.nav-item{
+    display: flex;
+    gap: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.nav-item a{
+    color: black;
+    font-family: BrandingMedium;
+    font-size: 1.7em;
+}
+
+#no-vehicles{
+    font-family: BrandingMedium;
+    color: white;
+    font-size: 1.35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 46px;
+    background: #333333;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+/* Style pour l'élément actif */
+.active{
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #d4683e;
+    text-decoration-style: initial;
+    text-underline-offset: 2px;
+}
+
+.not-active{
+    text-decoration: none;
+}
+
+#add-vehicule-link{
+    font-family: BrandingBold;
+    text-decoration: none;
+    color: white;
+}
+
+#login, #logout{
+    color: black;
+    text-decoration: none;
+    font-family: BrandingMedium;
+    font-size: 1.7em;
+    letter-spacing: 0.05em;
+}
+
+/* Page d'accueil */
+.filters-container{
+    height: calc(100% - 88px);
+    min-height: 605px;
+}
+
+#background-homepage{
+    z-index: -4924;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #F5F5F5;
+}
+
+#left-pannel{
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100vh;
+    background-color: #d4683e;
+}
+
+.filters {
+    margin-top: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#title-homepage{
+    overflow-y: hidden;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 80px;
+}
+
+/* Formulaire de recherche */
+.form-filter{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#rectangle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1080px;
+    background-color: rgba(29, 29, 27, .7);
+}
+
+#rental-title {
+    border: none;
+    width: 100%;
+    height: 51px;
+    font-size: 2em;
+    color: white;
+    background-color: #d4683e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: BrandingSemiLight;
+    letter-spacing: 0.02em;
+}
+
+#rental-title:hover{
+    cursor:default;
+}
+
+#rental-filter {
+    color: white;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#rental-filter h3{
+    margin-top: 20px;
+    font-family: BrandingSemiLight;
+    font-size: 3em;
+    align-self: flex-start;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+#dates-choice{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-date {
+    width: 100%;
+    border: 1px solid #ffffff; 
+    padding: 4px 12px 4px 12px; 
+    background-color: transparent; 
+    color: #ffffff; 
+    font-size: 25px;
+    font-family: BrandingSemiLight;
+}
+
+.input-date:focus {
+    outline: none;
+}
+
+.dates{
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    font-family: BrandingSemiLight;
+    font-size: 1.7em;
+    color: white;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.label-dates{
+    font-family: BrandingSemiLight;
+    font-size: 1.5em;
+    color: white;
+}
+
+.input-max-price{
+    background: transparent;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #ffffff;
+    padding: 4px 12px 4px 12px;
+    color: white;
+    font-size: 25px;
+    font-family: BrandingSemiLight;
+}
+
+.input-max-price:focus {
+    outline: none;
+}
+
+.input-max-price::placeholder{
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+    color: white;
+}
+
+.btn-search {
+    border: none;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8D9C92;
+    color: white;
+    padding: 6px 12px 6px 12px;
+    font-size: 30px;
+    font-family: BrandingSemiLight;
+}
+
+#rental-filter p {
+    margin: 30px 0 30px 0;
+    font-size: 1.5em;
+    font-family: BrandingSemiLight;
+    align-self: flex-start;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+/* =====Affichage des véhicules de location===== */
+/*Partie haute de la carte*/
+.container-vehicles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#card-ad {
+    position: relative;
+    padding: 0;
+    margin:15px;
+    width: 100%;
+    min-width: 408px;
+    max-width: 408px;
+}
+
+#card-ad img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 408px;
+    max-width: 408px;
+    min-height: 220px;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+#vehicle-img{
+    position: relative;
+}
+
+#price-per-day {
+    line-height: 1.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 1px 0 10px;
+    width: 130px;
+    max-height: 63px;
+    font-family: BrandingSemiLight;
+    background: #2f2f34;
+    color: white;
+}
+
+#price-per-day p{
+    display: inline-block;
+    margin: 0 0 0px 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+#price-per-day h3{
+    margin-top: 0;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+/*Partie basse de la carte*/
+#card-bottom {
+    border-bottom: 1px solid #E2E2E1;
+    border-left: 1px solid #E2E2E1;
+    border-right: 1px solid #E2E2E1;
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+    background: #fff;
+    min-width: 408px;
+    max-width: 408px;
+}
+
+#edit, #delete {
+    background: white;
+    color: #d4683e;
+    font-size: 2em;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+}
+
+#edit:hover, #delete:hover {
+    transform: scale(1.15);
+}
+
+#actions{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+    position: absolute;
+    left: calc(100% - 4em - 2rem);
+    bottom: 23px;
+}
+
+/* Formulaire de création de véhicule */
+/* Etapes */
+.tunnel-vehicule {
+    width: 100%;
+    margin: 45px 0 45px 0;
+    position: relative;
+}
+
+.circle {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.label {
+    margin-top: 10px;
+    font-family: BrandingMedium;
+    font-size: 35px;
+    color: #000;
+}
+
+.step-selected .circle {
+    background-color: #d4683e;
+}
+
+.step-selected .label {
+    color: #d4683e;
+}
+
+.row .col-md-2:not(.step-selected) .circle {
+    background-color: #C4C4C3;
+}
+
+.row .col-md-2:not(.step-selected) .label {
+    color: #C4C4C3;
+}
+
+.row .col-md-2.step-selected:not(:last-child)::after {
+    background-color: #d4683e;
+}
+
+.row .col-md-2:not(.step-selected) .circle {
+    background-color: #C4C4C3;
+}
+
+.row .col-md-2:not(.step-selected) .label {
+    color: #C4C4C3;
+}
+
+/* Formulaire Etape 1 : Informations */
+.card {
+    border: none;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-vehicle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.form-label-container{
+    font-family: BrandingMedium;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-url{
+    width: 680px;
+}
+
+.urlimg-widget{
+    font-family: BrandingSemiLight;
+    width: 680px;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em; 
+}
+
+.select-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-container .brand-widget {
+    width: 300px;
+    padding-right: 20px;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.select-container .select-icon {
+    position: absolute;
+    right: 5px;
+    pointer-events: none;
+}
+
+.model-widget {
+    font-family: BrandingSemiLight;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.model-helper-text {
+    font-family: BrandingSemiLight;
+    position: absolute;
+    font-size: 18px;
+    color: #888;
+    top: 100%;
+}
+
+.submit-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 3px solid #d4683e;
+    padding: 8px 16px 8px 16px;
+    width: 150px;
+    height: 57px;
+    background: #d4683e;
+    font-family: BrandingSemiLight;
+    font-size: 30px;
+    color: white;
+    transition: 0.3s;
+}
+
+.submit-widget:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #d4683e;
+}
+
+.input{
+    padding-inline: 2px;
+    transition: 0.2s;
+}
+
+.input:focus {
+    border-bottom: 1px solid #d4683e;
+    outline: none;
+}
+
+/* Formulaire Etape 2 : Disponibilité */
+
+.form-availability-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-availability{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dates-availability{
+    font-family: BrandingSemiLight;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    width: 49%;
+    flex-direction: column;
+}
+
+.price-per-day{
+    width: 100%;
+    margin-top: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-per-day::placeholder{
+    color: black;
+}
+
+.form-dates:focus {
+    outline: none;
+}
+
+.form-dates{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: BrandingSemiLight; 
+    padding: 4px 12px 4px 12px;
+    border: 1px solid black;
+    color: black;
+    font-size: 25px;
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+}
+
+.price-per-day{
+    background: transparent;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 4px 12px 4px 12px;
+    color: black;
+    font-size: 25px;
+    font-family: BrandingSemiLight;
+}
+
+.price-per-day:focus {
+    outline: none;
+}
+
+.price-per-day::placeholder{
+    letter-spacing: 0.02em;
+    word-spacing: 0.03em;
+    color: black;
+}
+
+/* Formulaire login */
+#login-form{
+    z-index: 1000;
+    padding: 50px 40px 50px 40px;
+    box-shadow: 4px 4px 13px -3px rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: white;
+}
+
+#login-title{
+    font-family: BrandingMedium;
+    font-size: 3em;
+    color: black;
+}
+
+#background-login{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+#login-form input{
+    font-family: BrandingSemiLight;
+    font-size: 1.5em;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px 10px 10px 10px;
+}
+
+#login-form input:focus{
+    outline: none;
+}
+
+.username, .password{
+    position: relative;
+    width: 100%;
+}
+
+.username label, .password label{
+    font-family: BrandingSemiLight;
+    font-size: 1.5em;
+}

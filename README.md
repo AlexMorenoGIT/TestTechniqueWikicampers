@@ -15,4 +15,4 @@ Ce projet est un test technique pour une alternance en développement chez WikiC
 Vous pouvez accéder à l'application via le lien suivant : [testtechniquewikicampers.alexmoreno.fr](http://testtechniquewikicampers.alexmoreno.fr)
 
 ## Accès à la démonstration en cas de bug du site
-(https://youtu.be/JQrPGg4IuK0]
+(https://youtu.be/JQrPGg4IuK0)

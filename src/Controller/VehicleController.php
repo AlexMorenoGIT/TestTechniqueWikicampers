@@ -65,6 +65,7 @@ class VehicleController extends AbstractController
 
     #[Route('/create-vehicle', name: 'create-vehicle')]
     public function createVehicle(Request $request) {
+
         //ne pas mettre l'accès si l'utilisateur n'est pas connecté
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
